@@ -14,6 +14,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="01. Maingame">
+      <UniqueIdentifier>{d424fe25-b13d-44be-a3db-e3c6b2863b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject">
+      <UniqueIdentifier>{9a54121c-5ccc-446b-9bc6-1a98fbc3cea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\01. Player">
+      <UniqueIdentifier>{87f29ce1-db5e-48db-bfcc-a10b39e38a77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\02. Monster">
+      <UniqueIdentifier>{fc1d57b2-ae3b-4c6c-b56f-5a5a67a8fa18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\03. Bullet">
+      <UniqueIdentifier>{d7455607-b062-42dd-95f3-3cf975e0a4fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\04. Shield">
+      <UniqueIdentifier>{5ba90364-bcce-47c1-b580-5a5a8f1b47ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Manager">
+      <UniqueIdentifier>{9dd7168b-e3be-4fb8-b86d-1b06a77ac6bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -34,6 +55,9 @@
     <ClInclude Include="Define.h">
       <Filter>98. Header</Filter>
     </ClInclude>
+    <ClInclude Include="Maingame.h">
+      <Filter>01. Maingame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -41,6 +65,9 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>99. etc</Filter>
+    </ClCompile>
+    <ClCompile Include="Maingame.cpp">
+      <Filter>01. Maingame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
