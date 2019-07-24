@@ -1,4 +1,17 @@
 #pragma once
 
-#define GAMECX	800
-#define GAMECY	600
+//게임 화면 크기
+#define GAMECX		800
+#define GAMECY		600
+
+//플레이어 속성
+#define PWIDTH		30
+#define PHEIGHT		30
+#define PXSPEED		5
+#define PYSPEED		5
+
+//몬스터 속성
+#define MWIDTH		20
+#define MHEIGHT		20
+#define MXSPEED		5
+#define MYSPEED		5

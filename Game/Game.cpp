@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Game.h"
+#include "Maingame.h"
 
 #define MAX_LOADSTRING 100
 
@@ -43,7 +44,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	msg.message = WM_NULL;
 
 	//TO DO: 여기다 메인게임 인스턴스 생성
-
+	CMaingame mainGame;
+	mainGame.Initialize();
 
 	DWORD dwOldTime = GetTickCount();
 	DWORD dwCurTime = 0;
@@ -62,7 +64,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		if (dwCurTime - dwOldTime >= 10)
 		{
 			//TO DO: 업데이트, 렌더
-
+			mainGame.Update();
+			mainGame.Render();
 
 			dwOldTime = dwCurTime;
 		}

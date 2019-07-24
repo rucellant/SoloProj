@@ -35,6 +35,9 @@
     <Filter Include="03. Manager">
       <UniqueIdentifier>{9dd7168b-e3be-4fb8-b86d-1b06a77ac6bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Manager\01. CollisionMgr">
+      <UniqueIdentifier>{f2fd9897-c17c-4f5f-970d-c54b0dd81508}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -58,6 +61,27 @@
     <ClInclude Include="Maingame.h">
       <Filter>01. Maingame</Filter>
     </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>98. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>98. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>02. GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>02. GameObject\01. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>03. Manager\01. CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Typedef.h">
+      <Filter>98. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>02. GameObject\02. Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -68,6 +92,18 @@
     </ClCompile>
     <ClCompile Include="Maingame.cpp">
       <Filter>01. Maingame</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>02. GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>02. GameObject\01. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>03. Manager\01. CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>02. GameObject\02. Monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

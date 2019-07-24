@@ -1,7 +1,13 @@
 #pragma once
+
+#include "GameObject.h"
+
 class CMaingame
 {
 private:
+	HDC m_hDC;
+
+	CGameObject* m_pPlayer;
 
 public:
 	CMaingame();
