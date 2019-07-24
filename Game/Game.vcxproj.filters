@@ -43,9 +43,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>00. Game</Filter>
     </ClInclude>
@@ -76,9 +73,6 @@
     <ClInclude Include="Player.h">
       <Filter>02. GameObject\01. Player</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionMgr.h">
-      <Filter>03. Manager\02. CollisionMgr</Filter>
-    </ClInclude>
     <ClInclude Include="Typedef.h">
       <Filter>98. Header</Filter>
     </ClInclude>
@@ -93,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="Function.h">
       <Filter>98. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>03. Manager\02. CollisionMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -111,11 +108,11 @@
     <ClCompile Include="Player.cpp">
       <Filter>02. GameObject\01. Player</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionMgr.cpp">
-      <Filter>03. Manager\02. CollisionMgr</Filter>
-    </ClCompile>
     <ClCompile Include="Monster.cpp">
       <Filter>02. GameObject\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>03. Manager\02. CollisionMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,5 +127,10 @@
     <Image Include="Game.ico">
       <Filter>99. etc\리소스 파일</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>99. etc</Filter>
+    </Text>
   </ItemGroup>
 </Project>

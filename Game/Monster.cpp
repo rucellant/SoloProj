@@ -27,6 +27,8 @@ void CMonster::Initialize()
 
 void CMonster::Update()
 {
+	Moving();
+	UpdateRectCollision();
 	CGameObject::UpdateRect();
 }
 
@@ -41,4 +43,21 @@ void CMonster::Release()
 
 void CMonster::Moving()
 {
+	m_tInfo.fX += m_tInfo.fXSpeed;
+	m_tInfo.fY += m_tInfo.fYSpeed;
+}
+
+void CMonster::UpdateRectCollision()
+{
+	if (CCollisionMgr::GetInstance()->CollisionRect(this))
+	{
+		if (m_tInfo.fX - m_tInfo.fWidth*0.5f <= 0)
+			m_tInfo.fXSpeed *= -1.f;
+		if (m_tInfo.fX + m_tInfo.fWidth*0.5f >= GAMECX)
+			m_tInfo.fXSpeed *= -1.f;
+		if (m_tInfo.fY - m_tInfo.fHeight*0.5f <= 0)
+			m_tInfo.fYSpeed *= -1.f;
+		if (m_tInfo.fY + m_tInfo.fWidth*0.5f >= GAMECY)
+			m_tInfo.fYSpeed *= -1.f;
+	}
 }

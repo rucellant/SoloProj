@@ -38,3 +38,4 @@ using namespace std;
 
 //Manager headers
 #include "CAbstractFactory.h"
+#include "CollisionMgr.h"

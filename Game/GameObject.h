@@ -16,8 +16,20 @@ public:
 	virtual void Release()			= 0;
 
 protected:
+	virtual void Moving() = 0;
+
+	virtual void UpdateRectCollision() = 0;
+
+protected:
 	void UpdateRect();
 
-	virtual void Moving() = 0;
+public:
+	//set
+	void SetPos(INFO tInfo);
+	void SetPos(float x, float y);
+
+	//get
+	INFO GetInfo() const;
+	
 };
 

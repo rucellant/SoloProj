@@ -28,7 +28,7 @@ void CPlayer::Initialize()
 void CPlayer::Update()
 {
 	Moving();
-
+	UpdateRectCollision();
 	CGameObject::UpdateRect();
 }
 
@@ -51,4 +51,19 @@ void CPlayer::Moving()
 		m_tInfo.fX += m_tInfo.fXSpeed*-1.f;
 	if (GetAsyncKeyState('D') & 0x8000)
 		m_tInfo.fX += m_tInfo.fXSpeed;
+}
+
+void CPlayer::UpdateRectCollision()
+{
+	if (CCollisionMgr::GetInstance()->CollisionRect(this))
+	{
+		if (m_tInfo.fX - m_tInfo.fWidth*0.5f <= 0)
+			SetPos(m_tInfo.fWidth*0.5f, m_tInfo.fY);
+		if (m_tInfo.fX + m_tInfo.fWidth*0.5f >= GAMECX)
+			SetPos(GAMECX - m_tInfo.fWidth*0.5f, m_tInfo.fY);
+		if (m_tInfo.fY - m_tInfo.fHeight*0.5f <= 0)
+			SetPos(m_tInfo.fX, m_tInfo.fHeight*0.5f);
+		if (m_tInfo.fY + m_tInfo.fWidth*0.5f >= GAMECY)
+			SetPos(m_tInfo.fX, GAMECY - m_tInfo.fHeight*0.5f);
+	}
 }

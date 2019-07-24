@@ -18,3 +18,20 @@ void CGameObject::UpdateRect()
 	m_tRect.top		= static_cast<LONG>(m_tInfo.fY - m_tInfo.fHeight*0.5f);
 	m_tRect.bottom	= static_cast<LONG>(m_tInfo.fY + m_tInfo.fHeight*0.5f);
 }
+
+void CGameObject::SetPos(INFO tInfo)
+{
+	m_tInfo.fX = tInfo.fX;
+	m_tInfo.fY = tInfo.fY;
+}
+
+void CGameObject::SetPos(float x, float y)
+{
+	m_tInfo.fX = x;
+	m_tInfo.fY = y;
+}
+
+INFO CGameObject::GetInfo() const
+{
+	return m_tInfo;
+}
