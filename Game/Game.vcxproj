@@ -145,9 +145,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CAbstractFactory.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
+    <ClInclude Include="Function.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Maingame.h" />

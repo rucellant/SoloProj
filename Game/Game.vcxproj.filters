@@ -35,7 +35,10 @@
     <Filter Include="03. Manager">
       <UniqueIdentifier>{9dd7168b-e3be-4fb8-b86d-1b06a77ac6bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Manager\01. CollisionMgr">
+    <Filter Include="03. Manager\01. AbstractFactory">
+      <UniqueIdentifier>{866057fb-b870-4bb5-bef5-202c97a242a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Manager\02. CollisionMgr">
       <UniqueIdentifier>{f2fd9897-c17c-4f5f-970d-c54b0dd81508}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -74,13 +77,22 @@
       <Filter>02. GameObject\01. Player</Filter>
     </ClInclude>
     <ClInclude Include="CollisionMgr.h">
-      <Filter>03. Manager\01. CollisionMgr</Filter>
+      <Filter>03. Manager\02. CollisionMgr</Filter>
     </ClInclude>
     <ClInclude Include="Typedef.h">
       <Filter>98. Header</Filter>
     </ClInclude>
     <ClInclude Include="Monster.h">
       <Filter>02. GameObject\02. Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CAbstractFactory.h">
+      <Filter>03. Manager\01. AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>98. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>98. Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +112,7 @@
       <Filter>02. GameObject\01. Player</Filter>
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
-      <Filter>03. Manager\01. CollisionMgr</Filter>
+      <Filter>03. Manager\02. CollisionMgr</Filter>
     </ClCompile>
     <ClCompile Include="Monster.cpp">
       <Filter>02. GameObject\02. Monster</Filter>

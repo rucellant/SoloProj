@@ -33,5 +33,8 @@ using namespace std;
 #include "Extern.h"
 #include "Struct.h"
 #include "Typedef.h"
+#include "Enum.h"
+#include "Function.h"
 
 //Manager headers
+#include "CAbstractFactory.h"

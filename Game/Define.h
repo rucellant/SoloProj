@@ -15,3 +15,5 @@
 #define MHEIGHT		20
 #define MXSPEED		5
 #define MYSPEED		5
+
+#define MNUM		5
