@@ -9,6 +9,7 @@ CMaingame::CMaingame()
 
 CMaingame::~CMaingame()
 {
+	Release();
 }
 
 void CMaingame::Initialize()
