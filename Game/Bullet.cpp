@@ -44,19 +44,11 @@ void CBullet::Release()
 
 void CBullet::Moving()
 {
+	m_tInfo.fY += m_tInfo.fYSpeed*-1.f;
 }
 
 void CBullet::UpdateRectCollision()
 {
-	if (CCollisionMgr::GetInstance()->CollisionRect(this))
-	{
-		if (m_tInfo.fX - m_tInfo.fWidth*0.5f <= 0)
-			SetPos(m_tInfo.fWidth*0.5f, m_tInfo.fY);
-		if (m_tInfo.fX + m_tInfo.fWidth*0.5f >= GAMECX)
-			SetPos(GAMECX - m_tInfo.fWidth*0.5f, m_tInfo.fY);
-		if (m_tInfo.fY - m_tInfo.fHeight*0.5f <= 0)
-			SetPos(m_tInfo.fX, m_tInfo.fHeight*0.5f);
-		if (m_tInfo.fY + m_tInfo.fWidth*0.5f >= GAMECY)
-			SetPos(m_tInfo.fX, GAMECY - m_tInfo.fHeight*0.5f);
-	}
+	if (!CCollisionMgr::GetInstance()->CollisionRect(this))
+		SetIsAlive(false);
 }

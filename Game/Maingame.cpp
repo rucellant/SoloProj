@@ -2,6 +2,7 @@
 #include "Maingame.h"
 #include "Player.h"
 #include "Monster.h"
+#include "Bullet.h"
 
 
 CMaingame::CMaingame()
@@ -23,6 +24,7 @@ void CMaingame::Initialize()
 	//플레이어 생성
 	CGameObject* pObj = CAbstractFactory<CPlayer>::CreateObject();
 	m_ObjList[OBJ_PLAYER].push_back(pObj);
+	dynamic_cast<CPlayer*>(pObj)->SetBulletList(&m_ObjList[OBJ_BULLET]);
 
 	//몬스터 생성
 	pObj = nullptr;
@@ -40,9 +42,21 @@ void CMaingame::Update()
 		OBJLIST::iterator iter_Begin	= m_ObjList[i].begin();
 		OBJLIST::iterator iter_End		= m_ObjList[i].end();
 
-		for (; iter_Begin != iter_End; ++iter_Begin)
+		for (; iter_Begin != iter_End;)
+		{
 			(*iter_Begin)->Update();
+
+			if (!(*iter_Begin)->GetInfo().isAlive)
+			{
+				SAFE_RELEASE(*iter_Begin);
+				iter_Begin = m_ObjList[i].erase(iter_Begin);
+			}
+			else
+				++iter_Begin;
+		}
 	}
+
+	CCollisionMgr::GetInstance()->CollisionSphere(&m_ObjList[OBJ_MONSTER], &m_ObjList[OBJ_BULLET]);
 }
 
 void CMaingame::Render()

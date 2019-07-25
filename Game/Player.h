@@ -1,11 +1,15 @@
 #pragma once
 #include "GameObject.h"
 
+class CBullet;
+
 class CPlayer : public CGameObject
 {
 public:
 	CPlayer();
 	virtual ~CPlayer();
+
+	OBJLIST* m_pBulletList;
 	
 public:
 	// CGameObject을(를) 통해 상속됨
@@ -20,5 +24,14 @@ protected:
 
 	// CGameObject을(를) 통해 상속됨
 	virtual void UpdateRectCollision() override;
+
+	void KeyInput();
+
+	void CreateBullet();
+
+public:
+	void SetBulletList(OBJLIST* pBulletList);
+
+	
 };
 
