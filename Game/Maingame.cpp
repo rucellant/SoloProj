@@ -37,6 +37,8 @@ void CMaingame::Initialize()
 
 void CMaingame::Update()
 {
+	CKeyMgr::GetInstance()->Update();
+
 	for (int i = 0; i < OBJ_END; i++)
 	{
 		OBJLIST::iterator iter_Begin	= m_ObjList[i].begin();

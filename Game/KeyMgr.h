@@ -6,9 +6,9 @@ class CKeyMgr
 private:
 	static CKeyMgr* m_pInstance;
 
-	DWORD dwKey;
-	DWORD dwKeyDown;
-	DWORD dwKeyUp;
+	DWORD m_dwKey;
+	DWORD m_dwKeyDown;
+	DWORD m_dwKeyUp;
 
 private:
 	CKeyMgr();
@@ -20,8 +20,13 @@ public:
 	void DestroyInstance();
 
 public:
-	bool KeyPressing(DWORD dwKey);
-	bool KeyDown(DWORD dwKey);
-	bool KeyUp(DWORD dwKey);
+	void Update();
+
+	bool KeyPressing(TCHAR _Input);
+	bool KeyDown(TCHAR _Input);
+	bool KeyUp(TCHAR _Input);
+
+protected:
+	DWORD TCHARTODWORD(TCHAR _Input);
 };
 

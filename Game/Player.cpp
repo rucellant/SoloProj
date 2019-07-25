@@ -67,7 +67,18 @@ void CPlayer::UpdateRectCollision()
 
 void CPlayer::KeyInput()
 {
-	if (GetAsyncKeyState('W') & 0x8000)
+	if (CKeyMgr::GetInstance()->KeyPressing('W'))
+		m_tInfo.fY += m_tInfo.fYSpeed*-1.f;
+	if (CKeyMgr::GetInstance()->KeyPressing('S'))
+		m_tInfo.fY += m_tInfo.fYSpeed;
+	if (CKeyMgr::GetInstance()->KeyPressing('A'))
+		m_tInfo.fX += m_tInfo.fXSpeed*-1.f;
+	if (CKeyMgr::GetInstance()->KeyPressing('D'))
+		m_tInfo.fX += m_tInfo.fXSpeed;
+	if (CKeyMgr::GetInstance()->KeyPressing(VK_SPACE))
+		CreateBullet();
+
+	/*if (GetAsyncKeyState('W') & 0x8000)
 		m_tInfo.fY += m_tInfo.fYSpeed*-1.f;
 	if (GetAsyncKeyState('S') & 0x8000)
 		m_tInfo.fY += m_tInfo.fYSpeed;
@@ -76,7 +87,7 @@ void CPlayer::KeyInput()
 	if (GetAsyncKeyState('D') & 0x8000)
  		m_tInfo.fX += m_tInfo.fXSpeed;
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
-		CreateBullet();
+		CreateBullet();*/
 }
 
 void CPlayer::CreateBullet()
