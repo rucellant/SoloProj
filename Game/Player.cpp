@@ -24,7 +24,8 @@ void CPlayer::Initialize()
 	m_tInfo.fHeight = PHEIGHT;
 	m_tInfo.fXSpeed = PXSPEED;
 	m_tInfo.fYSpeed = PYSPEED;
-	m_tInfo.theta	= 0.f;
+	m_tInfo.theta	= M_PI*1.5f;
+	m_Barrel		= BLENGTH;
 
 	CGameObject::UpdateRect();
 }
@@ -39,6 +40,7 @@ void CPlayer::Update()
 void CPlayer::Render(HDC hdc)
 {
 	Rectangle(hdc, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	DrawBarrel(hdc);
 }
 
 void CPlayer::Release()
@@ -48,6 +50,8 @@ void CPlayer::Release()
 void CPlayer::Moving()
 {
 	KeyInput();
+
+
 }
 
 void CPlayer::UpdateRectCollision()
@@ -67,35 +71,42 @@ void CPlayer::UpdateRectCollision()
 
 void CPlayer::KeyInput()
 {
+	if (m_tInfo.theta >= 2 * M_PI || m_tInfo.theta <= -1 * 2 * M_PI)
+		m_tInfo.theta = 0;
+
 	if (CKeyMgr::GetInstance()->KeyPressing('W'))
-		m_tInfo.fY += m_tInfo.fYSpeed*-1.f;
+	{
+		m_tInfo.fX += cosf((float)m_tInfo.theta)*m_tInfo.fXSpeed;
+		m_tInfo.fY += sinf((float)m_tInfo.theta)*m_tInfo.fYSpeed;
+	}
 	if (CKeyMgr::GetInstance()->KeyPressing('S'))
-		m_tInfo.fY += m_tInfo.fYSpeed;
+	{
+		m_tInfo.fX += -1*cosf((float)m_tInfo.theta)*m_tInfo.fXSpeed;
+		m_tInfo.fY += -1*sinf((float)m_tInfo.theta)*m_tInfo.fYSpeed;
+	}
 	if (CKeyMgr::GetInstance()->KeyPressing('A'))
-		m_tInfo.fX += m_tInfo.fXSpeed*-1.f;
+		m_tInfo.theta += -1 * (M_PI / 180)*ROTATESPEED;
 	if (CKeyMgr::GetInstance()->KeyPressing('D'))
-		m_tInfo.fX += m_tInfo.fXSpeed;
+		m_tInfo.theta += 1 * (M_PI / 180)*ROTATESPEED;
 	if (CKeyMgr::GetInstance()->KeyPressing(VK_SPACE))
 		CreateBullet();
-
-	/*if (GetAsyncKeyState('W') & 0x8000)
-		m_tInfo.fY += m_tInfo.fYSpeed*-1.f;
-	if (GetAsyncKeyState('S') & 0x8000)
-		m_tInfo.fY += m_tInfo.fYSpeed;
-	if (GetAsyncKeyState('A') & 0x8000)
-		m_tInfo.fX += m_tInfo.fXSpeed*-1.f;
-	if (GetAsyncKeyState('D') & 0x8000)
- 		m_tInfo.fX += m_tInfo.fXSpeed;
-	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
-		CreateBullet();*/
 }
 
 void CPlayer::CreateBullet()
 {
 	CGameObject* pBullet = new CBullet;
 	dynamic_cast<CBullet*>(pBullet)->Initialize();
-	pBullet->SetPos(m_tInfo.fX, m_tInfo.fY);
+	pBullet->SetPos(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX,
+		sinf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fY);
+	pBullet->SetAngle(m_tInfo.theta);
 	m_pBulletList->push_back(pBullet);
+}
+
+void CPlayer::DrawBarrel(HDC hdc)
+{
+	MoveToEx(hdc, (int)m_tInfo.fX, (int)m_tInfo.fY, nullptr);
+	LineTo(hdc, static_cast<int>(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX),
+		static_cast<int>(sinf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fY));
 }
 
 void CPlayer::SetBulletList(OBJLIST * pBulletList)

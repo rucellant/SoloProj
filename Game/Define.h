@@ -10,6 +10,9 @@
 #define PXSPEED		5
 #define PYSPEED		5
 
+#define BLENGTH		25
+#define ROTATESPEED	3
+
 //몬스터 속성
 #define MWIDTH		20
 #define MHEIGHT		20

@@ -36,6 +36,11 @@ void CGameObject::SetIsAlive(bool canEdit)
 	m_tInfo.isAlive = canEdit;
 }
 
+void CGameObject::SetAngle(double angle)
+{
+	m_tInfo.theta = angle;
+}
+
 INFO CGameObject::GetInfo() const
 {
 	return m_tInfo;

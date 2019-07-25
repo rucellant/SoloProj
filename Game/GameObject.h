@@ -29,6 +29,7 @@ public:
 	void SetPos(INFO tInfo);
 	void SetPos(float x, float y);
 	void SetIsAlive(bool canEdit);
+	void SetAngle(double angle);
 
 	//get
 	INFO GetInfo() const;

@@ -5,6 +5,9 @@ class CBullet;
 
 class CPlayer : public CGameObject
 {
+private:
+	float m_Barrel;
+
 public:
 	CPlayer();
 	virtual ~CPlayer();
@@ -21,13 +24,15 @@ public:
 protected:
 	// CGameObject을(를) 통해 상속됨
 	virtual void Moving() override;
-
+	
 	// CGameObject을(를) 통해 상속됨
 	virtual void UpdateRectCollision() override;
 
 	void KeyInput();
 
 	void CreateBullet();
+
+	void DrawBarrel(HDC hdc);
 
 public:
 	void SetBulletList(OBJLIST* pBulletList);
