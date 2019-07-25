@@ -18,6 +18,9 @@ public:
 protected:
 	virtual void Moving() = 0;
 
+	virtual bool isDying(CGameObject* pObj) = 0;
+
+	//게임화면 경계와의 충돌 검사
 	virtual void UpdateRectCollision() = 0;
 
 protected:
@@ -27,9 +30,11 @@ public:
 	//set
 	void SetPos(INFO tInfo);
 	void SetPos(float x, float y);
+	void SetIsAlive(bool canEdit);
 
 	//get
 	INFO GetInfo() const;
+	RECT GetRect() const;
 	
 };
 

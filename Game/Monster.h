@@ -20,5 +20,8 @@ public:
 protected:
 	// CGameObject을(를) 통해 상속됨
 	virtual void UpdateRectCollision() override;
+
+	// CGameObject을(를) 통해 상속됨
+	virtual bool isDying(CGameObject* pObj) override;
 };
 

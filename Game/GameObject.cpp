@@ -31,7 +31,17 @@ void CGameObject::SetPos(float x, float y)
 	m_tInfo.fY = y;
 }
 
+void CGameObject::SetIsAlive(bool canEdit)
+{
+	m_tInfo.isAlive = canEdit;
+}
+
 INFO CGameObject::GetInfo() const
 {
 	return m_tInfo;
+}
+
+RECT CGameObject::GetRect() const
+{
+	return m_tRect;
 }

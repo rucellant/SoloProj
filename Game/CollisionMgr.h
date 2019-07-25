@@ -2,6 +2,7 @@
 
 class CGameObject;
 
+//ΩÃ±€≈Ê
 class CCollisionMgr
 {
 private:

@@ -14,6 +14,7 @@ CMonster::~CMonster()
 
 void CMonster::Initialize()
 {
+	m_tInfo.isAlive = true;
 	m_tInfo.fX		= static_cast<float>(rand() % (GAMECX - 100) + 50);
 	m_tInfo.fY		= static_cast<float>(rand() % (GAMECY - 100) + 50);
 	m_tInfo.fWidth	= MWIDTH;
@@ -60,4 +61,9 @@ void CMonster::UpdateRectCollision()
 		if (m_tInfo.fY + m_tInfo.fWidth*0.5f >= GAMECY)
 			m_tInfo.fYSpeed *= -1.f;
 	}
+}
+
+bool CMonster::isDying()
+{
+	return false;
 }

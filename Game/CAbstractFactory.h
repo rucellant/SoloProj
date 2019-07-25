@@ -18,6 +18,15 @@ public:
 
 		return pObj;
 	}
+
+	static CGameObject* CreateObject(float x, float y)
+	{
+		CGameObject* pObj = new T;
+		dynamic_cast<T*>(pObj)->Initialize();
+		pObj->SetPos(x, y);
+
+		return pObj;
+	}
 };
 
 

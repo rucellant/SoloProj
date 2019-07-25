@@ -14,6 +14,7 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize()
 {
+	m_tInfo.isAlive = true;
 	m_tInfo.fX		= GAMECX*0.5f;
 	m_tInfo.fY		= GAMECY*0.5f;
 	m_tInfo.fWidth	= PWIDTH;
