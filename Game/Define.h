@@ -17,3 +17,9 @@
 #define MYSPEED		5
 
 #define MNUM		5
+
+//ÃÑ¾Ë ¼Ó¼º
+#define BWIDTH		10
+#define BHEIGHT		10
+#define BXSPEED		10
+#define BYSPEED		10

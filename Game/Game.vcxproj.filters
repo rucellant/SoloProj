@@ -91,6 +91,9 @@
     <ClInclude Include="CollisionMgr.h">
       <Filter>03. Manager\02. CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>02. GameObject\03. Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -113,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
       <Filter>03. Manager\02. CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>02. GameObject\03. Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

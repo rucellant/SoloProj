@@ -36,5 +36,11 @@ public:
 
 public:
 	bool CollisionRect(CGameObject* pObj);
+
+	//객체 간의 원형 충돌 검사
+	void CollisionSphere(OBJLIST* pSource, OBJLIST* pDest);
+
+	//객체간의 사각형 충돌 검사
+	void CollisionRectEX(OBJLIST* pSource, OBJLIST* pDest);
 };
 

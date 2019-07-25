@@ -23,3 +23,13 @@ bool CCollisionMgr::CollisionRect(CGameObject * pObj)
 	else
 		return false;
 }
+
+void CCollisionMgr::CollisionSphere(OBJLIST * pSource, OBJLIST * pDest)
+{
+	OBJLIST::iterator Siter = pSource->begin();
+	OBJLIST::iterator Diter = pDest->begin();
+}
+
+void CCollisionMgr::CollisionRectEX(OBJLIST * pSource, OBJLIST * pDest)
+{
+}
