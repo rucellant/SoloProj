@@ -2,3 +2,4 @@
 
 class CGameObject;
 typedef list<CGameObject*> OBJLIST;
+

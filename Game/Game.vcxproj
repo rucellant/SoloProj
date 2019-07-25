@@ -148,12 +148,14 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CAbstractFactory.h" />
     <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Maingame.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
@@ -168,6 +170,7 @@
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Maingame.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />

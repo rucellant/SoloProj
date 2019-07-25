@@ -35,7 +35,9 @@ using namespace std;
 #include "Typedef.h"
 #include "Enum.h"
 #include "Function.h"
+#include "Constants.h"
 
 //Manager headers
 #include "CAbstractFactory.h"
 #include "CollisionMgr.h"
+#include "KeyMgr.h"
