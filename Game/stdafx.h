@@ -43,3 +43,4 @@ using namespace std;
 #include "CAbstractFactory.h"
 #include "CollisionMgr.h"
 #include "KeyMgr.h"
+#include "ObjectMgr.h"

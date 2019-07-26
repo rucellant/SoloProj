@@ -44,6 +44,9 @@
     <Filter Include="03. Manager\03. KeyMgr">
       <UniqueIdentifier>{d7521e75-536d-446a-bbbe-7d6978e4eca9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Manager\04. ObjectMgr">
+      <UniqueIdentifier>{9726798b-983c-41a4-8f90-eaae2acb3654}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -103,6 +106,9 @@
     <ClInclude Include="Constants.h">
       <Filter>98. Header</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectMgr.h">
+      <Filter>03. Manager\04. ObjectMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -131,6 +137,9 @@
     </ClCompile>
     <ClCompile Include="KeyMgr.cpp">
       <Filter>03. Manager\03. KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMgr.cpp">
+      <Filter>03. Manager\04. ObjectMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

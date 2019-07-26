@@ -12,8 +12,6 @@ public:
 	CPlayer();
 	virtual ~CPlayer();
 
-	OBJLIST* m_pBulletList;
-	
 public:
 	// CGameObject을(를) 통해 상속됨
 	virtual void Initialize() override;
@@ -30,13 +28,8 @@ protected:
 
 	void KeyInput();
 
-	void CreateBullet();
+	CGameObject* CreateBullet();
 
 	void DrawBarrel(HDC hdc);
-
-public:
-	void SetBulletList(OBJLIST* pBulletList);
-
-	
 };
 

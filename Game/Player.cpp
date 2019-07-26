@@ -15,8 +15,6 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize()
 {
-	m_pBulletList = nullptr;
-
 	m_tInfo.isAlive = true;
 	m_tInfo.fX		= GAMECX*0.5f;
 	m_tInfo.fY		= GAMECY*0.5f;
@@ -89,17 +87,14 @@ void CPlayer::KeyInput()
 	if (CKeyMgr::GetInstance()->KeyPressing('D'))
 		m_tInfo.theta += 1 * (M_PI / 180)*ROTATESPEED;
 	if (CKeyMgr::GetInstance()->KeyPressing(VK_SPACE))
-		CreateBullet();
+		CObjectMgr::GetInstance()->AddObject(OBJ_BULLET, CreateBullet());
 }
 
-void CPlayer::CreateBullet()
+CGameObject* CPlayer::CreateBullet()
 {
-	CGameObject* pBullet = new CBullet;
-	dynamic_cast<CBullet*>(pBullet)->Initialize();
-	pBullet->SetPos(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX,
-		sinf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fY);
-	pBullet->SetAngle(m_tInfo.theta);
-	m_pBulletList->push_back(pBullet);
+	return CAbstractFactory<CBullet>::CreateObject(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX,
+		sinf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fY,
+		(float)m_tInfo.theta);
 }
 
 void CPlayer::DrawBarrel(HDC hdc)
@@ -107,9 +102,4 @@ void CPlayer::DrawBarrel(HDC hdc)
 	MoveToEx(hdc, (int)m_tInfo.fX, (int)m_tInfo.fY, nullptr);
 	LineTo(hdc, static_cast<int>(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX),
 		static_cast<int>(sinf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fY));
-}
-
-void CPlayer::SetBulletList(OBJLIST * pBulletList)
-{
-	m_pBulletList = pBulletList;
 }

@@ -27,6 +27,16 @@ public:
 
 		return pObj;
 	}
+
+	static CGameObject* CreateObject(float x, float y,float theta)
+	{
+		CGameObject* pObj = new T;
+		dynamic_cast<T*>(pObj)->Initialize();
+		pObj->SetPos(x, y);
+		pObj->SetAngle(theta);
+
+		return pObj;
+	}
 };
 
 
