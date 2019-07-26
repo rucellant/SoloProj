@@ -15,22 +15,34 @@ CCollisionMgr::~CCollisionMgr()
 
 bool CCollisionMgr::CollisionRect(CGameObject * pObj)
 {
-	if (pObj->GetInfo().fX - pObj->GetInfo().fWidth*0.5f <= 0  ||
+	/*if (pObj->GetInfo().fX - pObj->GetInfo().fWidth*0.5f <= 0  ||
 		pObj->GetInfo().fX + pObj->GetInfo().fWidth*0.5f >= 0  ||
 		pObj->GetInfo().fY - pObj->GetInfo().fHeight*0.5f <= 0 ||
 		pObj->GetInfo().fY + pObj->GetInfo().fHeight*0.5f >= 0)
 		return true;
 	else
-		return false;
+		return false;*/
+
+	if (pObj->GetInfo().fX - pObj->GetInfo().fWidth*0.5f <= 0)
+		return true;
+	if (pObj->GetInfo().fX + pObj->GetInfo().fWidth*0.5f >= GAMECX)
+		return true;
+	if (pObj->GetInfo().fY - pObj->GetInfo().fHeight*0.5f <= 0)
+		return true;
+	if (pObj->GetInfo().fY + pObj->GetInfo().fHeight*0.5f >= GAMECY)
+		return true;
+
+	return false;
 }
 
 void CCollisionMgr::CollisionSphere(OBJLIST * pSource, OBJLIST * pDest)
 {
 	OBJLIST::iterator Siter = pSource->begin();
-	OBJLIST::iterator Diter = pDest->begin();
 
 	for (; pSource->end() != Siter; ++Siter)
 	{
+		OBJLIST::iterator Diter = pDest->begin();
+
 		for (; pDest->end() != Diter; ++Diter)
 		{
 			float a = powf((*Siter)->GetInfo().fX - (*Diter)->GetInfo().fX, 2);
@@ -42,6 +54,8 @@ void CCollisionMgr::CollisionSphere(OBJLIST * pSource, OBJLIST * pDest)
 			{
 				(*Siter)->SetIsAlive(false);
 				(*Diter)->SetIsAlive(false);
+
+				break;
 			}
 		}
 	}

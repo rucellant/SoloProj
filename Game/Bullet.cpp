@@ -44,11 +44,11 @@ void CBullet::Release()
 
 void CBullet::Moving()
 {
-	m_tInfo.fY += m_tInfo.fYSpeed*-1.f;
+	m_tInfo.fX += cosf((float)m_tInfo.theta)*BXSPEED;
+	m_tInfo.fY += sinf((float)m_tInfo.theta)*BXSPEED;
 }
 
 void CBullet::UpdateRectCollision()
 {
-	if (!CCollisionMgr::GetInstance()->CollisionRect(this))
-		SetIsAlive(false);
+	SetIsAlive(!CCollisionMgr::GetInstance()->CollisionRect(this));
 }

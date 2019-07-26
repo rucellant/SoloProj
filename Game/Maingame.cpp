@@ -27,9 +27,10 @@ void CMaingame::Initialize()
 	dynamic_cast<CPlayer*>(pObj)->SetBulletList(&m_ObjList[OBJ_BULLET]);
 
 	//¸ó½ºÅÍ »ý¼º
-	pObj = nullptr;
+	
 	for (int i = 0; i < MNUM; i++)
 	{
+		pObj = nullptr;
 		pObj = CAbstractFactory<CMonster>::CreateObject();
 		m_ObjList[OBJ_MONSTER].push_back(pObj);
 	}
@@ -73,6 +74,8 @@ void CMaingame::Render()
 		for (; iter_Begin != iter_End; ++iter_Begin)
 			(*iter_Begin)->Render(m_hDC);
 	}
+
+	ShowInfo();
 }
 
 void CMaingame::Release()
@@ -86,4 +89,10 @@ void CMaingame::Release()
 		for (; iter_Begin != iter_End; ++iter_Begin)
 			SAFE_RELEASE(*iter_Begin);
 	}
+}
+
+void CMaingame::ShowInfo()
+{
+	wsprintf(gameInfo, L"ÃÑ¾ËÀÇ °¹¼ö : %d", m_ObjList[OBJ_BULLET].size());
+	TextOut(m_hDC, 0, 0, gameInfo, wcslen(gameInfo));
 }

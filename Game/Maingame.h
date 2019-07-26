@@ -5,6 +5,8 @@
 class CMaingame
 {
 private:
+	TCHAR gameInfo[100];
+
 	HDC m_hDC;
 
 	OBJLIST m_ObjList[OBJ_END];
@@ -20,5 +22,7 @@ public:
 
 private:
 	void Release();
+
+	void ShowInfo();
 };
 
