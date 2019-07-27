@@ -85,11 +85,19 @@ bool CKeyMgr::KeyUp(TCHAR _Input)
 
 	//이전에 누른 적 있고 현재 누르지 않았을 때 true
 	if ((m_dwKeyUp & dwKey) && !(m_dwKey & dwKey))
+	{
+		m_dwKeyUp |= dwKey;
 		return true;
+	}
+		
 
 	//이전에 누른 적 없고 현재 눌렀을 때 false
 	if (!(m_dwKeyUp & dwKey) && (m_dwKey & dwKey))
+	{
+		m_dwKeyUp ^= dwKey;
 		return false;
+	}
+		
 
 	return false;
 }
