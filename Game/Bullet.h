@@ -3,6 +3,11 @@
 
 class CBullet : public CGameObject
 {
+private:
+	float m_fDistance;
+	float m_fTargetX;
+	float m_fTargetY;
+
 public:
 	CBullet();
 	virtual ~CBullet();
@@ -18,5 +23,12 @@ protected:
 	virtual void Moving() override;
 	
 	virtual void UpdateRectCollision() override;
+
+private:
+	//목표와의 각도 구하는 함수
+	void ChaseTarget();
+
+	//가장 가까운 몬스터를 찾는 함수
+	CGameObject* FindNearTarget(OBJLIST* objList);
 };
 

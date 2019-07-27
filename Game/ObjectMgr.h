@@ -38,6 +38,8 @@ public:
 	void Update();
 	void Render(HDC hdc);
 
+	OBJLIST* GetObjList(OBJ_TYPE eType);
+
 private:
 	void Release();
 

@@ -28,7 +28,7 @@ void CMonster::Initialize()
 
 void CMonster::Update()
 {
-	Moving();
+	//Moving();
 	UpdateRectCollision();
 	CGameObject::UpdateRect();
 }

@@ -19,7 +19,7 @@
 #define MXSPEED		5
 #define MYSPEED		5
 
-#define MNUM		10
+#define MNUM		2
 
 //ÃÑ¾Ë ¼Ó¼º
 #define BWIDTH		10

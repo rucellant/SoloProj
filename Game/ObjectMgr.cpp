@@ -60,6 +60,11 @@ void CObjectMgr::Render(HDC hdc)
 	ShowInfo(hdc);
 }
 
+OBJLIST* CObjectMgr::GetObjList(OBJ_TYPE eType)
+{
+	return &m_ObjList[eType];
+}
+
 void CObjectMgr::Release()
 {
 	for (int i = 0; i < OBJ_END; i++)

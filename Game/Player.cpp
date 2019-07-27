@@ -86,15 +86,17 @@ void CPlayer::KeyInput()
 		m_tInfo.theta += -1 * (M_PI / 180)*ROTATESPEED;
 	if (CKeyMgr::GetInstance()->KeyPressing('D'))
 		m_tInfo.theta += 1 * (M_PI / 180)*ROTATESPEED;
-	if (CKeyMgr::GetInstance()->KeyPressing(VK_SPACE))
+	if (CKeyMgr::GetInstance()->KeyDown(VK_SPACE))
 		CObjectMgr::GetInstance()->AddObject(OBJ_BULLET, CreateBullet());
 }
 
 CGameObject* CPlayer::CreateBullet()
 {
-	return CAbstractFactory<CBullet>::CreateObject(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX,
+	CGameObject* pObj = CAbstractFactory<CBullet>::CreateObject(cosf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fX,
 		sinf((float)m_tInfo.theta)*m_Barrel + m_tInfo.fY,
 		(float)m_tInfo.theta);
+	
+	return pObj;
 }
 
 void CPlayer::DrawBarrel(HDC hdc)

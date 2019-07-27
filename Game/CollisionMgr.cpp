@@ -54,8 +54,6 @@ void CCollisionMgr::CollisionSphere(OBJLIST * pSource, OBJLIST * pDest)
 			{
 				(*Siter)->SetIsAlive(false);
 				(*Diter)->SetIsAlive(false);
-
-				break;
 			}
 		}
 	}
